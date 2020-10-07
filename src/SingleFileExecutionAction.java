@@ -206,12 +206,12 @@ public class SingleFileExecutionAction extends AnAction {
 
     /** build target exeName according based on the configuration */
     private String buildExeName(String exeName) {
-        String newExeName;
+        String nameReplaced, dirReplaced;
         /* %FILENAME% replacement */
-        newExeName = exeName.replace(SingleFileExecutionConfig.EXECUTABLE_NAME_FILENAME, sourceFile.getNameWithoutExtension());
+        nameReplaced = exeName.replace(SingleFileExecutionConfig.EXECUTABLE_NAME_FILENAME, sourceFile.getNameWithoutExtension());
         /* %FILEDIR% replacement */
-        newExeName = exeName.replace(SingleFileExecutionConfig.FILEDIR, sourceFile.getParent().getName());
-        return newExeName;
+        dirReplaced = nameReplaced.replace(SingleFileExecutionConfig.FILEDIR, sourceFile.getParent().getName());
+        return dirReplaced;
     }
 
     private String buildRuntimeOutputDirectory() {
