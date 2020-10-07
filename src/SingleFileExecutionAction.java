@@ -209,6 +209,8 @@ public class SingleFileExecutionAction extends AnAction {
         String newExeName;
         /* %FILENAME% replacement */
         newExeName = exeName.replace(SingleFileExecutionConfig.EXECUTABLE_NAME_FILENAME, sourceFile.getNameWithoutExtension());
+        /* %FILEDIR% replacement */
+        newExeName = exeName.replace(SingleFileExecutionConfig.FILEDIR, sourceFile.getParent().getName());
         return newExeName;
     }
 
